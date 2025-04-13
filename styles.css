@@ -1422,39 +1422,51 @@ footer::before {
 }
 
 @media (max-width: 768px) {
-  .hamburger {
+  .navbar-toggler {
     display: block;
   }
 
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  .nav-links {
-    position: fixed;
-    top: -100%;
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
     left: 0;
-    width: 100%;
-    flex-direction: column;
+    right: 0;
     background-color: white;
-    text-align: center;
-    padding: 40px 0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
     z-index: 1;
   }
 
-  .nav-links.active {
-    top: 80px;
+  .navbar-collapse.show {
+    max-height: 300px;
   }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    padding: 1px 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 20px;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a:hover {
+    background-color: rgba(37, 99, 235, 0.05);
+  }
+
 
   .hero .container,
   .about-content,
@@ -1508,6 +1520,7 @@ footer::before {
 }
 
 @media (max-width: 576px) {
+  
   .hero-content h1 {
     font-size: 2.5rem;
   }
