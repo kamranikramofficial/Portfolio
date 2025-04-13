@@ -187,10 +187,15 @@ header.scrolled {
 }
 
 header .container {
+  padding: 15px 20px;
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  width: 100%;
+  position: relative;
 }
 
 .logo {
@@ -201,7 +206,7 @@ header .container {
 .logo h1 {
   font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -212,9 +217,55 @@ header .container {
   transform: scale(1.05);
 }
 
+/* Bootstrap-style Navbar Toggler */
+.navbar-toggler {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.toggler-icon {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: var(--dark-color);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+.navbar-toggler.active .toggler-icon:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggler.active .toggler-icon:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler.active .toggler-icon:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.navbar-collapse {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .nav-links {
   display: flex;
   gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -243,19 +294,52 @@ header .container {
   width: 100%;
 }
 
-.hamburger {
-  display: none;
-  cursor: pointer;
-  z-index: 2;
-}
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block;
+  }
 
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  background-color: var(--dark-color);
-  transition: var(--transition);
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    z-index: 1;
+  }
+
+  .navbar-collapse.show {
+    max-height: 300px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 20px;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a:hover {
+    background-color: rgba(37, 99, 235, 0.05);
+  }
 }
 
 /* Hero Section */
@@ -333,7 +417,7 @@ header .container {
   transform: translateY(20px);
 }
 
-.highlight {
+.hero-content>.highlight{
   color: var(--primary-color);
   position: relative;
   display: inline-block;

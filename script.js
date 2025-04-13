@@ -10,24 +10,44 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   
-    // Mobile Navigation
-    const hamburger = document.querySelector(".hamburger")
-    const navLinks = document.querySelector(".nav-links")
-  
-    if (hamburger && navLinks) {
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active")
-        navLinks.classList.toggle("active")
-      })
-  
-      // Close mobile menu when clicking on a nav link
-      document.querySelectorAll(".nav-links a").forEach((link) => {
-        link.addEventListener("click", () => {
-          hamburger.classList.remove("active")
-          navLinks.classList.remove("active")
-        })
-      })
-    }
+ // Bootstrap-style Navigation Toggle
+ const navbarToggler = document.querySelector(".navbar-toggler")
+ const navbarCollapse = document.querySelector(".navbar-collapse")
+
+ if (navbarToggler && navbarCollapse) {
+   // Toggle menu when toggler is clicked
+   navbarToggler.addEventListener("click", () => {
+     navbarCollapse.classList.toggle("show")
+     navbarToggler.classList.toggle("active")
+     navbarToggler.setAttribute(
+       "aria-expanded",
+       navbarToggler.getAttribute("aria-expanded") === "false" ? "true" : "false",
+     )
+   })
+
+   // Close menu when a navigation link is clicked
+   document.querySelectorAll(".nav-links a").forEach((link) => {
+     link.addEventListener("click", () => {
+       navbarCollapse.classList.remove("show")
+       navbarToggler.classList.remove("active")
+       navbarToggler.setAttribute("aria-expanded", "false")
+     })
+   })
+
+   // Close menu when clicking outside
+   document.addEventListener("click", (e) => {
+     if (
+       !navbarToggler.contains(e.target) &&
+       !navbarCollapse.contains(e.target) &&
+       navbarCollapse.classList.contains("show")
+     ) {
+       navbarCollapse.classList.remove("show")
+       navbarToggler.classList.remove("active")
+       navbarToggler.setAttribute("aria-expanded", "false")
+     }
+   })
+ }
+
   
     // Header scroll effect
     const header = document.querySelector("header")
