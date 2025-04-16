@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   
 
-  // Bootstrap-style Navigation Toggle
+  //  Navigation Toggle
   const navbarToggler = document.querySelector(".navbar-toggler")
   const navbarCollapse = document.querySelector(".navbar-collapse")
 
