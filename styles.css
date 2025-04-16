@@ -619,7 +619,7 @@ header .container {
 .skill-bar {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
   transition: var(--transition);
 }
 
