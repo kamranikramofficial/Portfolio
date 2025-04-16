@@ -1621,6 +1621,13 @@ footer::before {
   .about-details {
     gap: 15px;
   }
+  .footer-links {
+    gap: -10px;
+  }
+  
+  .footer-links a {
+    padding: 4px 0;
+  }
 }
 
 /* Dark Mode Toggle */
