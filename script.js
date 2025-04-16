@@ -1,18 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Add preloader
-  const preloader = document.createElement("div")
-  preloader.className = "preloader"
-  preloader.innerHTML = '<div class="loader"></div>'
-  document.body.appendChild(preloader)
-
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      preloader.classList.add("fade-out")
-      setTimeout(() => {
-        preloader.style.display = "none"
-      }, 500)
-    }, 500)
-  })
+  
 
   // Bootstrap-style Navigation Toggle
   const navbarToggler = document.querySelector(".navbar-toggler")
