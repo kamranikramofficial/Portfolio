@@ -7,6 +7,7 @@
     <title>My Portfolio</title>
     <link rel="icon" type="image/x-icon" href="img/my.jpg">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -70,37 +71,47 @@
         <div class="container">
             <h2 class="section-title animate-on-scroll fade-in">About Me</h2>
             <div class="about-content">
-                <div class="about-image animate-on-scroll slide-in-left">
-                    <img src="img/my.jpg" alt="About Me Image">
+                <div data-aos="fade-up-right">
+                    <div class="about-image animate-on-scroll slide-in-left">
+                        <img src="img/my.jpg" alt="About Me Image">
+                    </div>
                 </div>
-                <div class="about-text">
-                    <h3 class="animate-on-scroll fade-in">Who am I?</h3>
-                    <p class="animate-on-scroll fade-in">I'm a passionate front-end web developer with a strong grasp of
-                        HTML, CSS, JavaScript, and Bootstrap. I specialize in crafting responsive, modern, and
-                        user-friendly websites that provide seamless experiences across all devices. With expertise in
-                        UI/UX design and interactive web components, I bring ideas to life with clean and efficient
-                        code. Whether it’s a landing page, portfolio, or a dynamic website, I ensure high performance
-                        and visually appealing designs.</p>
-                    <p class="animate-on-scroll fade-in">My journey in web development began during my school years, and
-                        since then, I've built multiple projects, ranging from science exhibition websites to dynamic
-                        web applications. I have a passion for creating engaging and interactive user experiences, and I
-                        continuously explore new technologies to enhance my skills.</p>
-                    <div class="about-details animate-on-scroll fade-in">
-                        <div class="detail">
-                            <span class="label">Name:</span>
-                            <span class="value">Kamran Ikram</span>
-                        </div>
-                        <div class="detail">
-                            <span class="label">Email:</span>
-                            <span class="value">kamranikram706@gmail.com</span>
-                        </div>
-                        <div class="detail">
-                            <span class="label">Location:</span>
-                            <span class="value">Pakistan, Karachi</span>
-                        </div>
-                        <div class="detail">
-                            <span class="label">Availability:</span>
-                            <span class="value">Freelance & Full-time</span>
+                <div data-aos="fade-up-left">
+                    <div class="about-text">
+                        <h3 class="animate-on-scroll fade-in">Who am I?</h3>
+                        <p class="animate-on-scroll fade-in">I'm a passionate front-end web developer with a strong
+                            grasp of
+                            HTML, CSS, JavaScript, and Bootstrap. I specialize in crafting responsive, modern, and
+                            user-friendly websites that provide seamless experiences across all devices. With expertise
+                            in
+                            UI/UX design and interactive web components, I bring ideas to life with clean and efficient
+                            code. Whether it’s a landing page, portfolio, or a dynamic website, I ensure high
+                            performance
+                            and visually appealing designs.</p>
+                        <p class="animate-on-scroll fade-in">My journey in web development began during my school years,
+                            and
+                            since then, I've built multiple projects, ranging from science exhibition websites to
+                            dynamic
+                            web applications. I have a passion for creating engaging and interactive user experiences,
+                            and I
+                            continuously explore new technologies to enhance my skills.</p>
+                        <div class="about-details animate-on-scroll fade-in">
+                            <div class="detail">
+                                <span class="label">Name:</span>
+                                <span class="value">Kamran Ikram</span>
+                            </div>
+                            <div class="detail">
+                                <span class="label">Email:</span>
+                                <span class="value">kamranikram706@gmail.com</span>
+                            </div>
+                            <div class="detail">
+                                <span class="label">Location:</span>
+                                <span class="value">Pakistan, Karachi</span>
+                            </div>
+                            <div class="detail">
+                                <span class="label">Availability:</span>
+                                <span class="value">Freelance & Full-time</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,68 +125,72 @@
             <h2 class="section-title animate-on-scroll">My Skills</h2>
             <div class="skills-content">
                 <div class="skill-category animate-on-scroll">
-                    <h3>Technical Skills</h3>
-                    <div class="skill-bars">
-                        <div class="skill-bar">
-                            <span class="skill-name">HTML</span>
-                            <div class="skill-progress">
-                                <div class="progress" data-percent="93%"></div>
+                    <div data-aos="fade-up-left">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <span class="skill-name">HTML</span>
+                                <div class="skill-progress">
+                                    <div class="progress" data-percent="93%"></div>
+                                </div>
+                                <span class="skill-percent">93%</span>
                             </div>
-                            <span class="skill-percent">93%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <span class="skill-name">CSS</span>
-                            <div class="skill-progress">
-                                <div class="progress" data-percent="85%"></div>
+                            <div class="skill-bar">
+                                <span class="skill-name">CSS</span>
+                                <div class="skill-progress">
+                                    <div class="progress" data-percent="85%"></div>
+                                </div>
+                                <span class="skill-percent">85%</span>
                             </div>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <span class="skill-name">Bootstrap</span>
-                            <div class="skill-progress">
-                                <div class="progress" data-percent="85%"></div>
+                            <div class="skill-bar">
+                                <span class="skill-name">Bootstrap</span>
+                                <div class="skill-progress">
+                                    <div class="progress" data-percent="85%"></div>
+                                </div>
+                                <span class="skill-percent">85%</span>
                             </div>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <span class="skill-name">JavaScript</span>
-                            <div class="skill-progress">
-                                <div class="progress" data-percent="60%"></div>
+                            <div class="skill-bar">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-progress">
+                                    <div class="progress" data-percent="60%"></div>
+                                </div>
+                                <span class="skill-percent">60%</span>
                             </div>
-                            <span class="skill-percent">60%</span>
                         </div>
                     </div>
                 </div>
                 <div class="skill-category animate-on-scroll">
-                    <h3>Professional Skills</h3>
-                    <div class="skill-bars">
-                        <div class="skill-bar">
-                            <span class="skill-name">Communication</span>
-                            <div class="skill-progress">
-                                <div class="progress" data-percent="80%"></div>
+                    <div data-aos="fade-down-right">
+                        <h3>Professional Skills</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <span class="skill-name">Communication</span>
+                                <div class="skill-progress">
+                                    <div class="progress" data-percent="80%"></div>
+                                </div>
+                                <span class="skill-percent">80%</span>
                             </div>
-                            <span class="skill-percent">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <span class="skill-name">Teamwork</span>
-                            <div class="skill-progress">
-                                <div class="progress" data-percent="50%"></div>
+                            <div class="skill-bar">
+                                <span class="skill-name">Teamwork</span>
+                                <div class="skill-progress">
+                                    <div class="progress" data-percent="50%"></div>
+                                </div>
+                                <span class="skill-percent">50%</span>
                             </div>
-                            <span class="skill-percent">50%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <span class="skill-name">Creativity</span>
-                            <div class="skill-progress">
-                                <div class="progress" data-percent="50%"></div>
+                            <div class="skill-bar">
+                                <span class="skill-name">Creativity</span>
+                                <div class="skill-progress">
+                                    <div class="progress" data-percent="50%"></div>
+                                </div>
+                                <span class="skill-percent">50%</span>
                             </div>
-                            <span class="skill-percent">50%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <span class="skill-name">Problem Solving</span>
-                            <div class="skill-progress">
-                                <div class="progress" data-percent="40%"></div>
+                            <div class="skill-bar">
+                                <span class="skill-name">Problem Solving</span>
+                                <div class="skill-progress">
+                                    <div class="progress" data-percent="40%"></div>
+                                </div>
+                                <span class="skill-percent">40%</span>
                             </div>
-                            <span class="skill-percent">40%</span>
                         </div>
                     </div>
                 </div>
@@ -190,7 +205,7 @@
             <h2 class="section-title animate-on-scroll fade-in">My Projects</h2>
 
             <div class="projects-grid">
-                <div class="project-card animate-on-scroll fade-in">
+                <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
                     <div class="project-image">
                         <img src="img/login.png" alt="Project 1">
                         <div class="project-overlay">
@@ -215,7 +230,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card animate-on-scroll fade-in">
+                <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
                     <div class="project-image">
                         <img src="img/Project2.png" alt="Project 2">
                         <div class="project-overlay">
@@ -239,7 +254,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card animate-on-scroll fade-in">
+                <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
                     <div class="project-image">
                         <img src="img/Project3.png" alt="Project 2">
                         <div class="project-overlay">
@@ -263,7 +278,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card animate-on-scroll fade-in">
+                <div data-aos="fade-up" data-aos-duration="3000">
                     <div class="project-image">
                         <img src="img/Project4.png" alt="Project 2">
                         <div class="project-overlay">
@@ -287,7 +302,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card animate-on-scroll fade-in">
+                <div data-aos="fade-up" data-aos-duration="3000">
                     <div class="project-image">
                         <img src="img/Project5.png" alt="Project 2">
                         <div class="project-overlay">
@@ -329,16 +344,21 @@
                     <div class="resume-section animate-on-scroll fade-in">
                         <h3>Education</h3>
                         <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-date">2025</div>
-                                <div class="timeline-content">
-                                    <h4>Secondary Education</h4>
-                                    <p>Al Beruni Education System Jamiat-ur-Rasheed :</p>
-                                    <p>Finished 10th class, excelling in science and technology. Passionate about web
-                                        development, with hands-on experience in HTML, CSS, JavaScript, and Bootstrap.
-                                        Successfully built multiple projects, including a science exhibition website and
-                                        a dynamic recipe site. </p>
+                            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2025</div>
+                                    <div class="timeline-content">
+                                        <h4>Secondary Education</h4>
+                                        <p>Al Beruni Education System Jamiat-ur-Rasheed :</p>
+                                        <p>Finished 10th class, excelling in science and technology. Passionate about
+                                            web
+                                            development, with hands-on experience in HTML, CSS, JavaScript, and
+                                            Bootstrap.
+                                            Successfully built multiple projects, including a science exhibition website
+                                            and
+                                            a dynamic recipe site. </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -346,16 +366,21 @@
                     <div class="resume-section animate-on-scroll fade-in">
                         <h3>Experience</h3>
                         <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-date">2024 - Present</div>
-                                <div class="timeline-content">
-                                    <h4>Front-End Web Developer</h4>
-                                    <p> Personal Projects</p>
-                                    <P>Developed responsive and user-friendly websites using HTML, CSS, JavaScript, and
-                                        Bootstrap. Built projects like a science exhibition website, a dynamic recipe
-                                        site, and a Snake game. Continuously learning and improving skills in modern web
-                                        technologies.</P>
+                            <div data-aos="fade-down" data-aos-anchor-placement="center-bottom">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2024 - Present</div>
+                                    <div class="timeline-content">
+                                        <h4>Front-End Web Developer</h4>
+                                        <p> Personal Projects</p>
+                                        <P>Developed responsive and user-friendly websites using HTML, CSS, JavaScript,
+                                            and
+                                            Bootstrap. Built projects like a science exhibition website, a dynamic
+                                            recipe
+                                            site, and a Snake game. Continuously learning and improving skills in modern
+                                            web
+                                            technologies.</P>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -449,7 +474,10 @@
     <a href="#home" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="script.js"></script>
 </body>
 
