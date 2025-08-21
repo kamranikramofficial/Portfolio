@@ -5,7 +5,7 @@ It showcases my skills, projects, education, and contact information.
 
 ## 🔗 Live Preview
 
-👉 [kamranikramofficial.github.io/Portfolio](https://kamranikramofficial.github.io/Portfolio/)
+[kamranikramofficial](https://kamranikramofficial.vercel.app/)
 
 ## 📂 Features
 
