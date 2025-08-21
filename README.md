@@ -30,6 +30,6 @@ It showcases my skills, projects, education, and contact information.
 
 ## 🤝 Connect with Me
 
-📧 Email: Kamranikram706@gmail.com   
+📧 Email: Kamranikramofficial@gmail.com   
 🌐 GitHub: [@kamranikramofficial](https://github.com/kamranikramofficial)
 
