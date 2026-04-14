@@ -389,7 +389,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.getElementById("contactForm")
 
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
+    const attachRealtimeValidation = () => {
+      contactForm.querySelectorAll("input, textarea").forEach((input) => {
+        input.addEventListener("input", function () {
+          if (this.value.trim()) {
+            this.style.borderColor = "var(--primary-color)"
+            this.style.backgroundColor = "white"
+          }
+        })
+      })
+    }
+
+    contactForm.addEventListener("submit", async (e) => {
       e.preventDefault()
 
       // Basic validation
@@ -414,51 +425,66 @@ document.addEventListener("DOMContentLoaded", () => {
       })
 
       if (isValid) {
-        const name = document.getElementById("name").value
-        const email = document.getElementById("email").value
-        const subject = document.getElementById("subject").value
-        const message = document.getElementById("message").value
+        const name = document.getElementById("name").value.trim()
+        const email = document.getElementById("email").value.trim()
+        const subject = document.getElementById("subject").value.trim()
+        const message = document.getElementById("message").value.trim()
 
-        console.log("Form submitted:", { name, email, subject, message })
+        const submitButton = contactForm.querySelector('button[type="submit"]')
+        const originalButtonText = submitButton ? submitButton.textContent : ""
 
-        // Success message with animation
-        const formContent = contactForm.innerHTML
-        contactForm.innerHTML = `
-          <div class="success-message" style="text-align: center; padding: 30px;">
-            <div style="font-size: 3rem; color: var(--success-color); margin-bottom: 20px;">
-              <i class="fas fa-check-circle"></i>
-            </div>
-            <h3 style="margin-bottom: 15px; color: var(--success-color);">Message Sent Successfully!</h3>
-            <p style="margin-bottom: 20px; color: var(--gray-color);">Thank you for your message! I will get back to you soon.</p>
-            <button type="button" class="btn primary-btn" id="resetForm">Send Another Message</button>
-          </div>
-        `
+        if (submitButton) {
+          submitButton.disabled = true
+          submitButton.textContent = "Sending..."
+        }
 
-        // Reset form button
-        document.getElementById("resetForm").addEventListener("click", function resetFormHandler() {
-          contactForm.innerHTML = formContent
-          // Re-attach event listener to the new form
-          const newForm = document.getElementById("contactForm")
-          if (newForm) {
-            newForm.addEventListener("submit", (e) => {
-              e.preventDefault()
-              contactForm.removeEventListener("submit", arguments.callee)
-              contactForm.dispatchEvent(new Event("submit"))
-            })
+        const apiBaseUrl = String(window.CONTACT_API_BASE_URL || "").replace(/\/$/, "")
+        const requestUrl = apiBaseUrl ? `${apiBaseUrl}/api/contact` : "/api/contact"
+
+        try {
+          const response = await fetch(requestUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email, subject, message }),
+          })
+
+          if (!response.ok) {
+            throw new Error("Request failed")
           }
-        })
+
+          // Success message with animation
+          const formContent = contactForm.innerHTML
+          contactForm.innerHTML = `
+            <div class="success-message" style="text-align: center; padding: 30px;">
+              <div style="font-size: 3rem; color: var(--success-color); margin-bottom: 20px;">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <h3 style="margin-bottom: 15px; color: var(--success-color);">Message Sent Successfully!</h3>
+              <p style="margin-bottom: 20px; color: var(--gray-color);">Thank you for your message! I will get back to you soon.</p>
+              <button type="button" class="btn primary-btn" id="resetForm">Send Another Message</button>
+            </div>
+          `
+
+          // Reset form button
+          document.getElementById("resetForm").addEventListener("click", () => {
+            contactForm.innerHTML = formContent
+            attachRealtimeValidation()
+          })
+        } catch (error) {
+          alert("Failed to send message. Please try again later.")
+
+          if (submitButton) {
+            submitButton.disabled = false
+            submitButton.textContent = originalButtonText
+          }
+        }
       }
     })
 
     // Real-time validation
-    contactForm.querySelectorAll("input, textarea").forEach((input) => {
-      input.addEventListener("input", function () {
-        if (this.value.trim()) {
-          this.style.borderColor = "var(--primary-color)"
-          this.style.backgroundColor = "white"
-        }
-      })
-    })
+    attachRealtimeValidation()
   }
 
   // Smooth scrolling for anchor links
